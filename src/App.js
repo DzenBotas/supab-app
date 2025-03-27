@@ -8,14 +8,7 @@ function App() {
   useEffect(() => {
     console.log("🌍 App loaded")
   
-    // Let Supabase handle the OAuth redirect automatically
-    // supabase.auth.exchangeCodeForSession()
-    //   .then(({ data, error }) => {
-    //     if (error) console.error("❌ exchangeCodeForSession error:", error)
-    //     else console.log("✅ Session restored:", data.session)
-    //   })
-  
-    // Always check for existing session after
+  // Always check for existing session after
     const getSession = async () => {
       const { data: { session }, error } = await supabase.auth.getSession()
       console.log("📦 getSession result:", session, error)
